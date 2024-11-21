@@ -1,0 +1,414 @@
+<html style><!--
+ Page saved with SingleFile 
+ url: https://norvig.com/21-days.html 
+ saved date: Tue Sep 03 2024 22:00:38 GMT+0800 (China Standard Time)
+--><meta charset=utf-8>
+<title>Teach Yourself Programming in Ten Years</title>
+<meta name=referrer content=no-referrer><link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAWqDP/Fqgz/xaoM/8WqDP/NFiLADRYiwA0WIsANFiLADRYiwA0WIsANFiLADRYiwAiIuX/IiLl/yIi5f8iIuX/Fqgz/xaoM/8WqDP/Fqgz/zRYiwA0WIsANFiLADRYiwA0WIsANFiLADRYiwCn7/3/IiLl/yIi5f8iIuX/IiLl/xaoM/8WqDP/Fqgz/xaoM/80WIsANFiLADRYiwA0WIsANFiLADRYiwCn7/3/BNb//yIi5f8iIuX/IiLl/yIi5f8WqDP/Fqgz/xaoM/8WqDP/NFiLADRYiwA0WIsANFiLADRYiwCn7/3/BNb//wTW//8iIuX/IiLl/yIi5f8iIuX/Fqgz/xaoM/8WqDP/Fqgz/zRYiwA0WIsANFiLADRYiwCn7/3/BNb//wTW//8E1v//IiLl/yIi5f8iIuX/IiLl/xaoM/8WqDP/Fqgz/xaoM/80WIsANFiLADRYiwCn7/3/BNb//wTW//8E1v//BNb//yIi5f8iIuX/IiLl/yIi5f8WqDP/Fqgz/xaoM/8WqDP/NFiLADRYiwCn7/3/BNb//wTW//8E1v//BNb//wTW//8iIuX/IiLl/yIi5f8iIuX/Fqgz/xaoM/8WqDP/Fqgz/zRYiwCn7/3/BNb//wTW//8E1v//BNb//wTW//8E1v//IiLl/yIi5f8iIuX/IiLl/xaoM/8WqDP/Fqgz/xaoM/+n7/3/BNb//wTW//8E1v//BNb//wTW//8E1v//BNb//yIi5f8iIuX/IiLl/yIi5f8WqDP/Fqgz/xaoM/8WqDP/BNb//wTW//8E1v//BNb//wTW//8E1v//BNb//6fv/f/lQyL/5UMi/+VDIv/lQyL/Fqgz/xaoM/8WqDP/Fqgz/wTW//8E1v//BNb//wTW//8E1v//BNb//6fv/f80WIsA5UMi/+VDIv/lQyL/5UMi/xaoM/8WqDP/Fqgz/xaoM/8E1v//BNb//wTW//8E1v//BNb//6fv/f80WIsANFiLAOVDIv/lQyL/5UMi/+VDIv8WqDP/Fqgz/xaoM/8WqDP/BNb//wTW//8E1v//BNb//6fv/f80WIsANFiLADRYiwDlQyL/5UMi/+VDIv/lQyL/Fqgz/xaoM/8WqDP/Fqgz/wTW//8E1v//BNb//6fv/f80WIsANFiLADRYiwA0WIsA5UMi/+VDIv/lQyL/5UMi/xaoM/8WqDP/Fqgz/xaoM/8E1v//BNb//6fv/f80WIsANFiLADRYiwA0WIsANFiLAOVDIv/lQyL/5UMi/+VDIv8WqDP/Fqgz/xaoM/8WqDP/BNb//6fv/f80WIsANFiLADRYiwA0WIsANFiLADRYiwDlQyL/5UMi/+VDIv/lQyL/D/AAAA/gAAAPwAAAD4AAAA8AAAAOAAAADAAAAAgAAAAAAAAAAAAAAAAQAAAAMAAAAHAAAADwAAAB8AAAA/AAAA==" type=image/x-icon><link rel=canonical href=https://norvig.com/21-days.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style><body style=margin-left:30px>
+<div style=max-width:52em>
+ <font face=modern>
+<center>
+<h1>Teach Yourself Programming in Ten Years</h1>
+<h3>Peter Norvig</h3>
+</center>
+<p>
+<table cellpadding=4>
+<tbody><tr>
+<td>
+<h2>Why is everyone in such a rush?</h2>
+Walk into any bookstore, and you'll see how to <i>Teach Yourself Java
+in 24 Hours</i> alongside endless variations offering to teach C,
+SQL, Ruby, Algorithms, and so on in a few days or hours. 
+The Amazon advanced search for [<a href="http://www.amazon.com/gp/search/ref=sr_adv_b/?search-alias=stripbooks&amp;unfiltered=1&amp;field-keywords=&amp;field-author=&amp;field-title=teach+yourself+hours&amp;field-isbn=&amp;field-publisher=&amp;node=&amp;field-p_n_condition-type=&amp;field-feature_browse-bin=&amp;field-subject=&amp;field-language=&amp;field-dateop=After&amp;field-datemod=&amp;field-dateyear=2000&amp;sort=relevanceexprank&amp;Adv-Srch-Books-Submit.x=16&amp;Adv-Srch-Books-Submit.y=5">title: teach,
+yourself, hours, since: 2000</a> and found 512 such books. Of the top ten, nine are programming books (the other is about bookkeeping). Similar results come from replacing "teach yourself" with "learn" or "hours" with "days."
+ 
+<p>The conclusion is that either people are in a big rush to learn
+about programming, or that programming is somehow fabulously easier to
+learn than anything else. 
+Felleisen <i>et al.</i>
+give a nod to this trend in their book <i><a href=http://www.ccs.neu.edu/home/matthias/HtDP2e/index.html>How to Design Programs</a></i>, when they say
+"Bad programming is easy. <i>Idiots</i> can learn it in <i>21 days</i>,
+even if they are <i>dummies</i>." The Abtruse Goose comic also had <a href=http://abstrusegoose.com/249>their take</a>.
+<p>Let's analyze what a title like <i><a href="http://www.amazon.com/Sams-Teach-Yourself-Hours-5th/dp/0672333317/ref=sr_1_6?s=books&amp;ie=UTF8&amp;qid=1412708443&amp;sr=1-6&amp;keywords=learn+c%2B%2B+days">Teach Yourself C++ in 24 Hours</a></i>
+could mean:
+<ul>
+<li><b>Teach Yourself:</b> In 24 hours you won't have time to write several
+significant programs, and learn from your successes and failures with
+them. You won't have time to work with an experienced programmer and
+understand what it is like to live in a C++ environment. In short, you
+won't have time to learn much. So the book can only be talking about a
+superficial familiarity, not a deep understanding. As Alexander Pope said,
+a little learning is a dangerous thing.<p>
+</p><li><b>C++:</b> In 24 hours you might be able to learn some of the syntax of
+C++ (if you already know another language), but you couldn't
+learn much about how to use the language. In short, if you were, say, a
+Basic programmer, you could learn to write programs in the style of
+Basic using C++ syntax, but you couldn't learn what C++ is
+actually good (and bad) for. So what's the point? <a href=http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html>Alan
+Perlis</a> once said: "A language that doesn't affect the way you
+think about programming, is not worth knowing". One possible point is
+that you have to learn a tiny bit of C++ (or more likely, something
+like JavaScript or Processing) because you need to interface with an
+existing tool to accomplish a specific task. But then you're not
+learning how to program; you're learning to accomplish that task.<p>
+</p><li><b>in 24 Hours:</b> Unfortunately, this is not enough, as the next
+section shows.
+</ul>
+<h2>Teach Yourself Programming in Ten Years</h2>
+Researchers (<a href=http://www.amazon.com/exec/obidos/ASIN/034531509X/>Bloom
+(1985)</a>, <a href=#bh>Bryan &amp; Harter (1899)</a>, <a href=http://www.amazon.com/exec/obidos/ASIN/0805803092>Hayes
+(1989)</a>, <a href=#sc>Simmon &amp; Chase (1973)</a>) have shown it
+takes about ten years to develop expertise in any of a wide variety of
+areas, including chess playing, music composition, telegraph
+operation, painting, piano playing, swimming, tennis, and research in
+neuropsychology and topology. The key is <i>deliberative</i>
+practice: not just doing it again and again, but challenging yourself
+with a task that is just beyond your current ability, trying it,
+analyzing your performance while and after doing it, and correcting
+any mistakes. Then repeat. And repeat again. There appear to be no
+real shortcuts: even Mozart, who was a musical prodigy at age 4, took
+13 more years before he began to produce world-class music. In
+another genre, the Beatles seemed to burst onto the scene with a
+string of #1 hits and an appearance on the Ed Sullivan show in 1964.
+But they had been playing small clubs in Liverpool and Hamburg since
+1957, and while they had mass appeal early on, their first great
+critical success, <i>Sgt. Peppers</i>, was released in 1967. 
+<p><a href=http://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017922>Malcolm
+Gladwell</a> has popularized the idea, although he concentrates on 10,000 hours, not 10 years.
+Henri Cartier-Bresson (1908-2004) had another metric: "Your first 10,000 photographs are your worst." (He didn't
+anticipate that with digital cameras, some people can reach that mark in a week.)
+True expertise may take a lifetime:
+Samuel Johnson (1709-1784) said "Excellence in any department can be
+attained only by the labor of a lifetime; it is not to be purchased at
+a lesser price." And Chaucer (1340-1400) complained "the lyf so short, the craft
+so long to lerne." Hippocrates (c. 400BC) is known for the excerpt "ars longa,
+vita brevis", which is part of the longer quotation "Ars longa, vita
+brevis, occasio praeceps, experimentum periculosum, iudicium
+difficile", which in English renders as "Life is short, [the] craft
+long, opportunity fleeting, experiment treacherous, judgment
+difficult." 
+Of course, no single number can be the final answer: it doesn't seem reasonable
+to assume that all skills (e.g., programming, chess playing, checkers playing, and music playing)
+could all require exactly the same amount of time to master, nor that all people
+will take exactly the same amount of time. As 
+Prof. <a href="http://www.amazon.com/K.-Anders-Ericsson/e/B000APB8AQ/ref=dp_byline_cont_book_1">
+K. Anders Ericsson</a> puts it, "In most domains it's remarkable how much time even the most
+talented individuals need in order to reach the highest levels of performance. The 10,000 hour number just gives you a sense that we're talking years of 10 to 20 hours a week which those who some people would argue are the most innately talented individuals still need to get to the highest level."
+<h2>So You Want to be a Programmer</h2>
+<p>
+Here's my recipe for programming success:
+<ul>
+<li> Get <b>interested</b> in programming, and do some because it is fun. Make sure
+that it keeps being enough fun so that you will be willing to put in your ten years/10,000 hours.<p>
+</p><li> <b>Program</b>. The best kind of learning is <a href=http://www.engines4ed.org/hyperbook/nodes/NODE-120-pg.html>learning
+by doing</a>. To put it more technically, "the maximal level of
+performance for individuals in a given domain is not attained
+automatically as a function of extended experience, but the level of
+performance can be increased even by highly experienced individuals as
+a result of deliberate efforts to improve." <a href=http://www2.umassd.edu/swpi/DesignInCS/expertise.html>(p. 366)</a>
+and "the most effective learning requires a well-defined task with an
+appropriate difficulty level for the particular individual,
+informative feedback, and opportunities for repetition and corrections
+of errors." (p. 20-21) The book <i>
+<a href=http://www.amazon.com/exec/obidos/ASIN/0521357349>Cognition in Practice: Mind, Mathematics, and Culture in Everyday
+Life</a></i> is an interesting 
+reference for this viewpoint.<p>
+</p><li> <b>Talk with</b> other programmers; read other programs. This is more important
+than any book or training course.<p>
+</p><li> If you want, put in four years at a <b>college</b> (or more at a
+graduate school). This will give you access to some jobs that require
+credentials, and it will give you a deeper understanding of the field,
+but if you don't enjoy school, you can (with some dedication) get
+similar experience on your own or on the job. In any case, book learning alone won't
+be enough. "Computer science education cannot make anybody an expert
+programmer any more than studying brushes and pigment can make
+somebody an expert painter" says Eric Raymond, author of <i>The New
+Hacker's Dictionary</i>. One of the best programmers I ever hired had
+only a High School degree; he's produced a lot of <a href=http://www.xemacs.org/>great</a> <a href=http://www.mozilla.org/>software</a>, has his own <a href="http://groups.google.com/groups?q=alt.fan.jwz&amp;meta=site%3Dgroups">news group</a>, and made enough in stock options to buy his own <a href=http://en.wikipedia.org/wiki/DNA_Lounge>nightclub</a>.<p>
+</p><li> Work on <b>projects with</b> other programmers. Be the best programmer
+on some projects; be the worst on some others. When you're the best,
+you get to test your abilities to lead a project, and to inspire
+others with your vision. When you're the worst, you learn what the
+masters do, and you learn what they don't like to do (because they
+make you do it for them).<p>
+</p><li> Work on <b>projects <i>after</i></b> other programmers. 
+Understand a program written by someone else. See what it takes to
+understand and fix it when the original programmers are not
+around. Think about how to design your programs to make it easier for
+those who will maintain them after you.<p>
+</p><li> Learn at least a half dozen <b>programming languages</b>. Include one
+language that emphasizes class abstractions (like Java or C++), one that
+emphasizes functional abstraction (like Lisp or ML or Haskell), one
+that supports syntactic abstraction (like Lisp), one
+that supports declarative specifications (like Prolog or C++
+templates), and
+one that emphasizes parallelism (like Clojure or Go). <p>
+</p><li> Remember that there is a "<b>computer</b>" in "computer science". Know
+how long it takes your computer to execute an instruction, fetch a
+word from memory (with and without a cache miss), read consecutive words from disk, and seek to a new location on disk. (<a href=#answers>Answers here.</a>) <p>
+</p><li> Get involved in a language
+<b>standardization</b> effort. It could be the ANSI C++ committee, or it
+could be deciding if your local coding style will have 2 or 4 space
+indentation levels. Either way, you learn about what other people
+like in a language, how deeply they feel so, and perhaps even a little
+about why they feel so.<p>
+</p><li> Have the good sense to <b>get off</b> the language standardization effort as
+quickly as possible.
+</ul>
+With all that in mind, its questionable how far you can get just by
+book learning. Before my first child was born, I read all the <i>How
+To</i> books, and still felt like a clueless novice. 30 Months later,
+when my second child was due, did I go back to the books for a
+refresher? No. Instead, I relied on my personal experience, which
+turned out to be far more useful and reassuring
+to me than the thousands of pages written
+by experts.
+<p>Fred Brooks, in his essay <i><a href=http://en.wikipedia.org/wiki/No_Silver_Bullet>No Silver Bullet</a></i> 
+identified a three-part plan for finding great
+software designers:
+<ol>
+ <li>Systematically identify top designers as early as possible.<p> 
+ </p><li>Assign a career mentor to be responsible for the development of the prospect and carefully keep a career file.<p>
+ </p><li>Provide opportunities for growing designers to interact and stimulate each other.<p>
+</p></ol>
+This assumes that some people already have the qualities necessary for
+being a great designer; the job is to properly coax them along. <a href=http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html>Alan
+Perlis</a> put it more succinctly: "Everyone can be taught to sculpt:
+Michelangelo would have had to be taught how not to. So it is with the
+great programmers". Perlis is saying that the greats have some
+internal quality that transcends their training. But where does the
+quality come from? Is it innate? Or do they develop it through
+diligence? As Auguste Gusteau (the fictional chef in
+<i>Ratatouille</i>) puts it, "anyone can cook, but only the fearless
+can be great." I think of it more as willingness to devote a large
+portion of one's life to deliberative practice. But maybe
+<i>fearless</i> is a way to summarize that. Or, as Gusteau's critic,
+Anton Ego, says: "Not everyone can become a great artist, but a great
+artist can come from anywhere."
+<p>
+So go ahead and buy that Java/Ruby/Javascript/PHP book; you'll
+probably get some use out of it. But you won't change your life, or
+your real overall expertise as a programmer in 24 hours or 21 days. 
+How about working hard to continually improve over 24 months?
+Well, now you're starting to get somewhere...
+<p>
+<hr>
+<h2>References</h2>
+<p>
+Bloom, Benjamin (ed.) <i><a href=http://www.amazon.com/exec/obidos/ASIN/034531509X>Developing Talent in Young People</a></i>, Ballantine, 1985.
+<p>
+Brooks, Fred, <i><a href=http://citeseer.nj.nec.com/context/7718/0>No Silver Bullets</a></i>, IEEE Computer, vol. 20, no. 4, 1987, p. 10-19.
+<p>
+<a name=bh>Bryan, W.L. &amp; Harter, N. "Studies on the telegraphic language:
+The acquisition of a hierarchy of habits. <i>Psychology Review</i>,
+1899, 8, 345-375</a>
+<p>
+Hayes, John R., <i><a href=http://www.amazon.com/exec/obidos/ASIN/0805803092>Complete Problem Solver</a></i> Lawrence Erlbaum, 1989.
+<p>
+<a name=cs>Chase, William G. &amp; Simon, Herbert A. 
+</a><a href="http://books.google.com/books?id=dYPSHAAACAAJ&amp;dq=%22perception+in+chess%22+simon&amp;ei=z4PyR5iIAZnmtQPbyLyuDQ">"Perception in Chess"</a>
+<i>Cognitive Psychology</i>, 1973, 4, 55-81.
+<p>
+Lave, Jean, <i><a href=http://www.amazon.com/exec/obidos/ASIN/0521357349>Cognition in Practice: Mind, Mathematics, and Culture in Everyday
+Life</a></i>, Cambridge University Press, 1988.
+<hr>
+<a name=answers><h2>Answers</h2></a>
+Approximate timing for various operations on a typical PC:<p>
+<table border=1 cellpadding=2 cellspacing=2>
+<tbody><tr><td>execute typical instruction<td align=right> 1/1,000,000,000 sec = 1 nanosec
+<tr><td>fetch from L1 cache memory<td align=right> 0.5 nanosec
+<tr><td>branch misprediction<td align=right> 5 nanosec
+<tr><td>fetch from L2 cache memory<td align=right> 7 nanosec
+<tr><td>Mutex lock/unlock<td align=right> 25 nanosec
+<tr><td>fetch from main memory<td align=right> 100 nanosec 
+<tr><td>send 2K bytes over 1Gbps network<td align=right> 20,000 nanosec
+<tr><td>read 1MB sequentially from memory<td align=right> 250,000 nanosec
+<tr><td>fetch from new disk location (seek)<td align=right> 8,000,000 nanosec
+<tr><td>read 1MB sequentially from disk<td align=right> 20,000,000 nanosec
+<tr><td>send packet US to Europe and back<td align=right> 150 milliseconds = 150,000,000 nanosec
+</table>
+ 
+<hr>
+<h2>Appendix: Language Choice</h2>
+Several people have asked what programming language they should learn first.
+There is no one answer, but consider these points:
+<p>
+<ul>
+<li><i>Use your friends</i>. When asked "what operating system should
+I use, Windows, Unix, or Mac?", my answer is usually: "use whatever
+your friends use." The advantage you get from learning from your
+friends will offset any intrinsic difference between OS, or
+between programming languages. Also consider your future friends:
+the community of programmers that you will be a part of if you
+continue. Does your chosen language have a large growing community
+or a small dying one? Are there books, web sites, and online forums
+to get answers from? Do you like the people in those forums?
+<li><i>Keep it simple</i>. Programming languages such as C++
+and Java are designed for professional development by large teams of
+experienced programmers who are concerned about the run-time efficiency of
+their code.
+As a result, these languages have complicated parts designed for these circumstances.
+You're concerned with learning to program. You don't need that complication.
+You want a language that was designed to be easy to learn and remember by a
+single new programmer.
+<li><i>Play.</i> Which way would you rather learn to play the piano: the
+normal, interactive way, in which you hear each note as soon as you hit a key,
+or "batch" mode, in which you only hear the notes after you finish a whole song?
+Clearly, interactive mode makes learning easier for the piano, and also for 
+programming. Insist on a language with an interactive mode and use it.
+</ul>
+Given these criteria, my recommendations for a first programming
+language would be <b><a href=http://python.org/>Python</a></b> or
+<b><a href=http://www.schemers.org/>Scheme</a></b>. 
+Another choice is Javascript, not because it is perfectly well-designed for beginners,
+but because there are so many online tutorials for it, such as 
+<a href=https://www.khanacademy.org/computing/cs/programming>Khan Academy's tutorial</a>.
+But your
+circumstances may vary, and there are other good choices. If your
+age is a single-digit, you might prefer
+<a href=http://alice.org/>Alice</a> or <a href=http://www.squeak.org/>Squeak</a> 
+or <a href=https://blockly-demo.appspot.com/static/apps/index.html>Blockly</a> (older learners might also enjoy these). The important
+thing is that you choose and get started.
+<hr>
+<h2>Appendix: Books and Other Resources</h2>
+Several people have asked what books and web pages they should learn
+from. I repeat that "book learning alone won't be enough" but I can
+recommend the following:
+<p>
+<ul>
+<li> <b>Scheme:</b> <a href=http://www.amazon.com/gp/product/0262011530>Structure and
+Interpretation of Computer Programs (Abelson &amp; Sussman)</a> is
+probably the best introduction to computer science, and it does
+teach programming as a way of understanding the computer science. 
+You can see <a href=http://www.swiss.ai.mit.edu/classes/6.001/abelson-sussman-lectures/>online videos of lectures</a> on this book, as well as the <a href=http://mitpress.mit.edu/sicp/full-text/book/book.html>complete text online</a>. The book is
+challenging and will weed out some people who perhaps could be
+successful with another approach. 
+<li> <b>Scheme:</b>
+<a href=http://www.amazon.com/gp/product/0262062186>How to
+Design Programs (Felleisen <i>et al.</i>)</a> is one of the best books
+on how to actually design programs in an elegant and functional way.
+<li> <b>Python:</b> 
+<a href=http://www.amazon.com/gp/product/1887902996>Python Programming:
+An Intro to CS (Zelle)</a> is a good introduction using Python. 
+<li> <b>Python:</b> Several
+online <a href=http://wiki.python.org/moin/BeginnersGuide>tutorials</a>
+ are available at <a href=http://python.org/>Python.org</a>.
+<li> <b>Oz:</b> <a href=http://www.amazon.com/gp/product/0262220695>Concepts,
+Techniques, and Models of Computer Programming (Van Roy &amp; Haridi)</a>
+is seen by some as the modern-day successor to Abelson &amp; Sussman.
+It is a tour through the big ideas of programming, covering a wider
+range than Abelson &amp; Sussman while being perhaps easier to read and
+follow. It uses a language, Oz, that is not widely known but serves as
+a basis for learning other languages.
+&lt;
+</ul>
+<p>
+<hr>
+<h2>Notes</h2>
+T. Capey points out that the <a href=http://www.amazon.com/exec/obidos/ASIN/0805803092>Complete
+ Problem Solver</a> page on Amazon now has the "Teach Yourself
+ Bengali in 21 days" and "Teach Yourself Grammar and Style" books under the
+ "Customers who shopped for this item also shopped for these items"
+ section. I guess that a large portion of the people who look at that
+ book are coming from this page.
+Thanks to Ross Cohen for help with Hippocrates.
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<td valign=top bgcolor=#eeeeee>
+<h2>Translations</h2>
+Thanks to the
+following authors,
+translations of 
+this page are
+available in:
+<hr>
+<a href=http://www.myahya.org/writing/21-days>Arabic<br>(Mohamed A. Yahya)
+<br><img width=150 height=56 src="data:image/png;base64,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">
+<hr>
+</a><a href=http://www.math.bas.bg/bantchev/misc/teach-10-years.html>Bulgarian<br>(Boyko Bantchev)<br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAB4CAYAAAC3kr3rAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2gcBCxIG6C8UmwAAAV9JREFUeJzt3TERgEAQBEEeCYhAHnKQhp3HAEwKQbeCS6Y2vDHnnAvwaP36APgzgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCISxnIc/6fDCgkAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBjXvvmTDi8sCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIBIFAEAgEgUAQCASBQBAIhBu1HAj6TkTqPAAAAABJRU5ErkJggg==" height=60 width=100>
+<hr>
+</a><a href="http://www.javaresearch.org/article/showarticle.jsp?column=451&amp;thread=12568">Chinese <br>(Xiaogang Guo)
+<br><img width=82 height=54 src="data:image/gif;base64,R0lGODlhUgA2AMQAAPf0CezGDsUeI8EPJcgtId6JFtZqGcw9H89MHfPkCuGYFNNbG+/VDOWnEui3ENp6GJ5AU74AJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABSADYAAAX/IBSNZGmeaKqubDtCoivPdF3CNkvkPIv3pcNDcQAaTb9VQRYABBbHaDIlALgOjAQiKo2pDIAdaxAxcLuspvnMXk1PVYCiTUe9TWAAo84nTQsAgYKDgwFifUdvCAmEjQpkKwcDBAKIPl4kAk2NAAlQLQcJDJCWKXcjgISGLgMKgQWkpUiYJXGDay0DBwpbsqa0JHmFNASxvjfAI5sBCJuVx0ancUsRA2rQ0ckGWiYKAdhApwWHJQXPY+Anp0cN6bNtCwEJDuTg60DX7i/JRg0H1Pru6eMicGAifgbRGDmXEBmQBQjaNXzXg0CgAAwbFmSBgAGAjBoRutgBcOI+k202O6KkoXKljJYuW8CM6UYkzZc2b8rMqbNmzx4zfzoUaiMo0QhGiSYVuvRn055PdUa9OZVm1ZhXXWZdCSEEADs="></a>
+<hr>
+<a href=http://tvrtko.bedekovic.net/home/articles/programming/21-days.html>Croatian
+<br>(Tvrtko Bedekovic)
+<br><img src=data:image/gif;base64,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 height=55 width=108></a>
+<hr><a href=http://federicogobbo.name/eo/norvig-21-tagoj.html>Esperanto
+<br> (Federico Gobbo)
+<br><img width=81 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACGCAMAAACv1DWwAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABUFBMVEUAmQD///+q3aoAmQDs9+yd2J2e2J5Kt0pLt0vw+fAHnAcGmwbu+O6j2qOk26RQuVBRuVH1+/UKnQoJnQnz+vOp3alWu1ZXvFf3/PcNng0Mngz2+/av36+w37Bcvlxdvl36/foRoBEQnxD5/fm14bW24rZiwGJjwWP8/vwVoRUToRP7/ftVu1VItkh1yHWh2aFTulPV7tUtqy2Q05BuxW4zrTPZ8Nmt3q0BmQHh8+E7sTsWohZ/zH8DmgNFtUXm9ea+5b4aoxqIz4j9/v3r9+tMt0woqSjP7M/+//70+/RxxnFhwGEmqCbU7tSAzICBzYEuqy7a8NrY79g0rjTf8t/L6sskpyTe8t6N0Y3y+vKO0o46sDrn9ecCmgIxrTHl9eWT1JOU1JRAs0APnw+n3Ke647oYoxhBs0EEmwQ4rzjo9uhHtUfp9umc15yf2Z9yx3I/37ytAAAAAXRSTlNVW+d9HQAAAAFiS0dEAf8CLd4AAAAHdElNRQfoBg8CKg3zvrJCAAAB+klEQVR42u3aV1PbQBiFYfBSTS8hlNA7hBAwhGaa6Z0QWgIEEnoL//8OPLZjsITxDDc6O+93Za3PXjwja/eTpbT0d5fPeKHSgAABAgQIECApQDIyLIFkZlkCyc6xA5Lrz8u3AlJgTKEVkCJjim2AlJQaU1ZuAeRDOOOzAFIRznzUh1RWhTPVNfKQT5FQrTykLhKqV4c0NEZCTc3ikJZYqlUc0hZLtWtDOjpjqa5uKUjB55fVE4/1JHz1pcTTZ6S3NMVZX/M9/tPq609lTlnA+9dIzcDbUwa/SVzsQ43JJwwPNIusWiOjyfJjrTrLb3dw/NX4xKTUPjI17R72h2bENsTZObfs/ILezr4Y8Dui9UuSLcpyYnJFtNeaT0yuakLWnNE+Sci6M7ohCXFpujYVId/dsluCkFC8RZz4/zEkCBmMt4iLgbzowQ89yPbw8xZxZzca3pOD7L9sEX9G/9/6JQc5SGwRe6vDI6NqkMMjR4u49ftp6OhYDHLi0iI2BJ90f8Qgf83pmXP0/MJcakFmr65d16eb2/E7Kch9sOO1u5R/UpDcJE+reRcFCBAgQIAAAQIEiDDE9+568AbEWFJAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgGhAbKlHcOFAw6h86FUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjQtMDYtMTVUMDI6NDI6MTIrMDA6MDC/W+/3AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI0LTA2LTE1VDAyOjQyOjEyKzAwOjAwzgZXSwAAAABJRU5ErkJggg==">
+</a>
+<hr><a href=http://www.vizmatic.com/apprenez-a-programmer-en-dix-ans/lang/fr>French <br>(Etienne Beauchesne)
+<br><img width=81 height=54 src="data:image/gif;base64,R0lGODlhUQA2ALMAAGyDus5AXc7V6O6/yb+/v8Ofp9twhp6luJGiy76Pmaqwvv///ztao74AJwAAAAAAACH5BAAAAAAALAAAAABRADYAAAT/EIFJq71Wkc27/10RjGRpnqYBMGzrvvArLHRt37g9NHzv/8BfYBUrGhmznHK5CzqfjeFxKltacU2otielepPXcHar7Xqn4LB1TH6az8a0WsluB9/wmHyOtZeJeUV7fDp+UHiBLoOENHWGXICJVYw5jo9RkZIti4yWj4ianISehqCSonykfqaJqHOqdqyBrmqwbbJ5tGKXd5maSJSVvEC4cLpXtmTFZ8drw0K+ocF9z5C/k9M1yVvLX9mF1TzdVM1M4eLRp9/a55jXiuuN7eNo8Qvbf++b9viH6a385v2bFfAcvSPl6AjUxyKhMIMDcxUMdzDOxGoVBV18llHPxmEdWWE4pEYxorGPvEJi+9bPjUlmKC+phBevpZOZ+2ouZDjyhs1eDIHphBi0J7iSRWN+eultKFKeSksxJRd11dR6TjFeRVg11laLWTl+1RgW5NgYB0CoXUsgwbwIADs=">
+</a>
+<hr>
+<a href=http://purl.net/stefan_ram/html/21-tage>German <br>(Stefan Ram)
+<br><img width=89 height=54 src="data:image/gif;base64,R0lGODlhWQA2ALMAAI4AHeKfVkBAQM5AXfPfjOm3gKpAVr4AJ+/UZgAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABZADYAAAT/UKRJq7046827FpInjmTJgWaqrl/IvjCJxnSdzXZu43r/8r6gCSgseojG5M2lbGKQTic0qpxSjdarMKv1cbu6L3hnAJjP6LR6zW673/C2YXCo2+/4vH7P7/v/fAN0gISFhod+goiLjI2Bg46RkoaKk5aXe5WYm5ianJ+RnqCjiKKkp4CmqKuZkKyveqqwsLKzrLW2qLi5pLu8oL6/nAMFAcbHyMnKy8zNzs/QzQUECNXW19jZ2tvc3d7f3ATU4OTl5ufe4ujr7O3h4+7x8ubq8/b32/X4+/j6/P/x/AEciE4gwYPgDCJcmA8ew4faFEKEKHEiw4oWEWLMSHAjR4AeBT/yIxABADs="></a>
+<hr>
+<a href=http://www.reviewsnest.com/charities/programmingin10years.htm>Hebrew 
+<br>(Eric McCain)
+<br><img width=150 height=56 src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAA4CAIAAACQdZYrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAASdAAAEnQB3mYfeAAABG1JREFUeF7tWr2RcjEMvK9A+qAISqACGiAnJyYlJSQkowM+cZrb08g/GD/bOg96EQO2LO9aK8mPf4/H48ufqREgCv2ZGoGvqb13558i6ijMjoBTODuDHoXTM+gUOoXzIzD9DjwXOoXTIzD9BjwKncLpEZh+Ax6FIyg8Ho90C7vf73ss5hT2QPXX5vV6xRX65XLpsZhT2APVp837/b5er5m/TvHHrk9PIWvUZrPpRUWVXfaKHwrEKhulk+amkJhjmHa7XemOO4w7HA7kA8UcRR6Zh1f0fYfVtMk/RCGd1vP5TCjQs91ucYoBjfKdgeOnU5opJ0DmPHaJ9lI+fcnIP0EhpQre9mq1wmdiiIjJBBkyDc1KQUA4gmb+QBK3BK/MXHhOq9xut06rhGbtKaSYUygTJaxIz1z9Q61ynTDCrKheqbCg04BvesSHPCtj9BOA2FMo9ZBYkfuXNCgK5ZEH3xiTqiaYdVLplyFCNim/yrOVIUZtIaMKL9etGGBPIW0YSKn4OJ1O+EntDbPCWhTshqV8ylrqfNAqnGUzIiyXQyyOzM3GFEr9CfMH0FE8IUeGVQMMhmqZiWlQKMdIf1J6Dg85siHvXRtBdeCMKYRYRfecao2lisr9IK1Gsx3kLtVE4mTQutJsint5/n4z0zfbI/tUSwplIRMqjyxYFCXQQ1VeMklIWtyfKHDDwMUAFmfFH/0KPZdJLuVeoVZX5LzUFEsKUXSEqJG7skaQ3mdmcdQybYw7ghuzUvHBy0UrHbTqUirQuSrnP4tC6GS02IuqKM5+lHWGj8awPgNxGe6pjo0CPSq/UkVxVSa/lLPkQg3jLG/KLAplSRLCKjGSYshnP1UsyF5CaiwihkLzXWQxVwYokrE6SdjUR+RCFDLR3WYag3c5QCaruEeV50yepJR+QPxHdvdmUYicEUZGQznKCy+fBtl9qq4c3aeqm+C8qsIwPrxtePfklY+3oTDTs5PrCMEK3YveAEQTJ4+URRPpAXEAtuTNrW7FfjiUVKHHGBmCz2uHcrYbjozWeGwfWbDkGizvEuQuVcLIjMv5laawsOfvHOC/dIBDcPDtmg2FsqMKBSeKTsXpQQxlXhogHwN3niVDM6oEqJvgWMlyFbsomWIQhQAojDNAs/BlTSGg4d2sPF6Z0vd59r8fIpimIAUudLuEsHCMAYXQt/AfCQQ9bpbr9iOl+CWg0TYcoZl/s6jIHpz/JDijKWyY6qo5xkTowcgCcrnburZqbjFvEBLX+09BhfvimOv3Kr/QjSXDhkYhGr6R72KWoDPF3KEU4rJqCmhmcbIlhSySqX+moJ1f3rDPAu4YP1tSmLlNRqdccVE5Boh5V2lJId9uqPtDeVOcueiaF0FzzxtTSPtRf/wCo85fJ7LbUyib68zriE77+UCzXSj8QBwNt+wUGoLfZmmnsA2OhlacQkPw2yztFLbB0dCKU2gIfpulncI2OBpacQoNwW+ztFPYBkdDK06hIfhtlnYK2+BoaMUpNAS/zdL/AZms7Pn1CSx/AAAAAElFTkSuQmCC></a>
+<hr>
+<a href=http://vikashtiwari.blogspot.com/2008/04/teach-yourself-programming-in-10-years.html>Hindi<br>
+(Vikash Tiwari)
+<br><img src=data:image/gif;base64,R0lGODlhUwA4AMQAAD+he8Dg1PviywBDZH+hsQ9ObT9yikChfE99lG+Vp5+4xF+Jnh9ady9mgd/n6+/z9b/Q2I+su8/b4a/EztDo3/zp2Pe+im+5nPWoY/////GLLwCCUAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABTADgAAAX/ICaOZGmeaKquLGlpcCzPdG3feK7L2O7/wGCtJywajzEicsnMKZvQqOYprR6p1iwQq+06veAdN0yGjcvhM9qrXmvbbis8Lp3TofY7EyPo+/+AgYKDhIWGh38VGYuMjY6PkJGLDxMElhCSmZqbnJ2PDwsDBaOiDAqeqKmqjxKjCQkZBAoEBgUID6u5upKtDRAJBBIECA4JEQMIu8rLDQ2zCwQJCwgGEgsQBRHL26oKAwsKCQYMAwMMDQwT4gzc7Z0IDA8RDQXl9g0GDgoFmO7+kbbEGbBnr4ABBN4I/FvoCJmlgQTLQSNQQCHDiwMiUCIXcUACCRkqXrxowMCCCAg6zDKwlKDAqZELW0IwQIBBvXIGF7wa4ADmQgfIHtBEAM9Ag0u2fDIk8M2BAQUKFjyFWqun0oWhEKh7YMnBggYDJly9yBRZhAXTCjAAOfZiMbDlnrad2xaA3bt48+rdy7ev37+A8V7YQLiw4cOIEytezLixY8MHHkueTLly4siWM2veXBgz58+gG3sOTbr0htGmU29Grbo1ZdauY4uWTfsx7Nq4Cd/OXXs3b9m+f7sOLlw18eKmjyMnrXw56AMBokufTr269evYs2vfPp1CCAA7></a>
+<hr>
+<a href=http://mestyanm.extra.hu/doc/21_nap.html>Hungarian<br>
+(Marton Mestyan)
+<br><img src=data:image/gif;base64,R0lGODlhUQA2AKIAAM4/XVq2dCOeRr4AJ////wAAAAAAAAAAACH5BAAAAAAALAAAAABRADYAAAOgOLrc/jDKSau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru874P/AoHBILBqPyB9hyWw6n9CodEqtWq/YrHbL7Xq/4LB4TC6bz+i0es1uu9/wuHxOr9vv+Lx+z+/7yQGBgoOEhYaHiImKi4ICjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr+/CQA7 width=81 height=54></a>
+<hr>
+<a href=http://djitz.com/djitzlosophy/belajar-programming-sendiri-dalam-sepuluh-tahun/>Indonesian<br>
+(Tridjito Santoso)
+<br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ4AAABpCAYAAADLEpraAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2gQSByMfRg/ALAAAATlJREFUeJzt1bENg1AUBEFAboCIDuiM2J3S0nMX3uDPVHDBSre/5z0b/NlRD2BNwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBLCIyE8EsIjITwSwiMhPBKf6/vUG1jQPjNTj2A9rpaE8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj4TwSAiPhPBICI+E8EgIj8QPKesHvjFxVagAAAAASUVORK5CYII=" width=81 height=54></a>
+<hr>
+<a href=http://www.culturahacker.it/documenti/teach.html>Italian<br>
+(Fabio Z. Tessitore)
+<br><img width=81 height=54 src=data:image/gif;base64,R0lGODlhUQA2AKIAAO6/yb+/v76Pmf///yOeRr4AJwAAAAAAACH5BAAAAAAALAAAAABRADYAAAP3SLrc7iHKSSsVJevNe39guAxkaZ7oCXhsq4mwk840ubo4F+9K7au5YIa3+xkHNyGOGDv+ksoWE+b0QaOeqahau2J1WhCX5v2+wo/xrGwuoNNqFNv8lsWB7U+dccfnN3t8fSVzX4EjgzZ/YIeJiotnjY6FWIc9k5CRgY5ImUOWnJRRlgShnm6gmJ6kpqupiaJKrKqZs7CntoOxQrl9u0G9d785wXHDS6+6uMm+y5K3rs/K0Zu0kMVqxy7YY9pSzMLO1dC14Mbie63l0s3U6daL3FzeLPJV9Fnm2eh16tf63fi98RcP4DyBaAj+secEnx524dz1g/cnAQA7></a>
+<hr>
+<a href=http://www.yamdas.org/column/technique/21-daysj.html>Japanese <br>(yomoyomo)
+<br><img width=81 height=54 src="data:image/gif;base64,R0lGODlhUQA2AMQAAPrv8e6/ycIPNPLP1sovT95/k9ZfeNJPauKPoPbf5M4/XcYfQuqvu9pvhZ+fn6+vr+afrr+/v74AJ////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABRADYAAAX/4BONZGmeaKqubBuJUyzPdG3feK7v08j/wKBw5hsaj8gicsnUKZvQaC8irTaf1mwQq+06qd5JIoAomAOJcIwbHRgWkrg8LjAEvGxmQDHv9xcMWnlHAAd+h30HAFaDQwNwiJF0A1WNQQMCkpoSApRRlj+Ym5udn2BLAASjowKLV6dIDaurB1CgOgOzs3dMtzmGuqMKr0sJwbOeSbBDCMerDb3LQnzOmwTRS9Wr2EfG2pu8R742Ad/gS+M15eaS4UbpNOvsiO5D8DPy8371QvcyAPoQJXsnLUimgH24HQGGMM4wdAWBQGgoB4FCIwAONnSljEkBigaIodI4T0Cai0eaZwUsYCuiEAP6HopkkoodAY4okdTUdlOKvxsAYDpTVMnlEQYkSVlkZJRQAUiSBBTA6bPpEgYNVPUhYCAQHqtRAgSg+lWN2Rs/z0JUy3YN2Lam4KpNK3fL27pr8YaJ4MCF37+AA5dwEAIAOw=="></a>
+<hr>
+<a href=http://www.tavon.org/site/work/21-days>Korean 
+(John Hwang)
+<br><img width=81 height=54 src=data:image/gif;base64,R0lGODlhUQA2AOYAAO/v78/Pzw8PDy8vL5+fn19fX9/f36+vrz8/P09PT29vb39/fx8fH4+Pj/L0+Z0WRlNJi0dkqOafrt5/k/rv8cIPNM4/Xdrg7Z2s0WyDusovT1NurtZfePLP1s7V6GM9fEtOk/bf5KUQPrXB3MYfQoSXxWw4dFtDhOqvu+6/yeKPoHQybObq86m21pUcTUNUm3wtZa0LNl94tLUFLtJPaniNv72WssWQqsGlv4QnXYwhVcHL4p08aJCiy7+/v74AJztaowAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABRADYAAAf/gD6Cg4SFhoeIiYqLjIINQpCRkpOUlZaXmJmakD6bnp+goZOdngADBKKplgUIn6SbCEFBj6q1QgOyBZ6vmQWyQQQGtqIBAb6yqJq8lwu/BQECAwDDngcCDAAJv8uV3JQEzgACsq3UmeKyAwa4s8qZAb/q7AIBDQHmlgoE4LkGAsmZvEWCJgubNlkHwP3DJwlArCABmslaEMlHAkwChQBgIIveMWDw0jGMtLGjgY+o+OmyJNDUr3rOCAaRdimEhAkWclrgoKKDJpnS5gVQ8IsWJYEHgfELUqBkEHqWJGj4QbWqVRITQmA6UNSpAAAfD3Sr5G8i0HUvK6EgYbWt2wkU/y6BS3aWXblRlqA9GzcT7C+AkShwcEu4LQmfeSEFIMA1lzgE045eAuDyqbGilChMLcyZagUUmPj5aPBrgTCWmLLJWuws8+bOsFNcEnoMsORM+hoHuSvJAuzfPyogpgQUbEZOm9D1pTQBOHANl3y0drdJYWRJISo4B65C7nLqm4pVGrz9d4WtroZR0F7+hwgTEIAAAWHiQVUJ5o5vktB+xgr5AAJ4Qgw/0JDfMDSUN0N8ATb4ggg/HGgLD+V90OCFQEDwg2zD6KeJfc49gCGGMODXoS0sgAichSM2CMIE1HiIiQcwbNcihjfEaMsFGgLnwo0X2qCjLUCo2NkJQDaIw/+QtUTQY2c/JhmgB0yqUgMQJnQmwgtSBuhAlam0IB8EBLqVQ5cByiBhLQ4E+IEOD8S5AghoBjjCmrWUUGeSEXwJ5mQF2AYJC3sCiQEm+uySHDveYFDoiBv4WYlEFIF3iQFoWVaJDI9eeIF3jlnajQAFlPWdJA5E0CmAd7L0C2QDQIYRJiEFsUCtA1RywQartppPOqrNNGslACjgFzJLrTSJAxkUGgGVvQhw0l/ijUUJWhcJRZQsRk3SgqpdliApJdncI4QBpJklgABi3TaJbsZypI4QYVniAAa83ljCp5jEwi4k1jDllbWUoBRAApFVBtUlF2BQQwa8ZpBBDzuMu8qRXwMhLBTBlDwEESQONcUXNiNFIpGtpigQybZBtOsuuUJlqoBMyo7EEVO3yKKyRrgIWhGtfEmDEjgIlwxyrPT+dUBkLnNcSa2tsAORjLVQxrI9M502bGjh3Oyz0RLtJctFAW3CMgEBMEC1OQTAapKolyTVtNFxd2Ru2YsKTPdP43z9ciYGVLq3JgbMvfXgiGMUCAA7></a>
+<hr>
+<a href="http://barnamenevis.org/forum/showthread.php?t=150950">Persian<br>(Mehdi Asgari)
+<br><img width=87 height=54 src=data:image/gif;base64,R0lGODlhYAA2AMQAAFq2dJHOosIPNMYfQjCkUXXCiz6qXUywaMovT+6/ydZfeN5/k+afrme8f/bf5NpvhdJPaqzaufrv8cjm0OPy5/LP1uqvu4PIluKPoM4/Xb4AJyOeRv///wAAAAAAAAAAACH5BAAAAAAALAAAAABgADYAAAX/4CaOZGmeaKqubOu+cCzPdG3feK7vfO//wKBwSCwaj8ikcslsOp/QqHRKI1hPVoIpi7qWtFpsmMTdesln9HjUuAAAhrfhcAA03vLGpi2X0wEEeHB6ABcbcH5xgXgGDXEFfXB1gnWNj5F/gncEjhsFBwWfh4wNkAeeBZ6gDaeCc5+noYd1rKNwr3SokwW1eA0EoafAsAC8B4t2w3SBnwYBzwHOz2/QxdAb0NHVANUF19AF0gHUzwbe5eDi1uXn2s/h3dDi0REc9hz19hMT9xMU9wHu4evHT98/ewHtUcjHYd+9CAcHKmTo72FEhgv7XRTIUKDHjyBDihSYwF6FkShT/6pcybIlBwEDEAxwSbOmTZYSLDiosOBBBQcMJNwcSrQmgwELFnDQkIGDggUDThadShVkAg0LBAhlyqFCBgUCHFQdW1Umg6ZL0WqwoEEB2bdDJWCFoBYtggUQZsLd6/Jqggx17WFdoIGv4ZV+MwgQ3NTB4MKHI48UkFRDSa4Y1ipAILkzSAUQKnBlKmGA1gEMPKu+V1oCBKxMXy/4u7p21wQSMmjY3ZYDBqG2a1c4ujuDzuDBEyjP8EC5VOTBHQBHntoe0HsOStpjIHY79uocst/jPv77PeXju3NQal07B/Te77EP7x4+B/D3BQDOgEA/YJn7CYBAgPv1V+AAAQ4ImN1//DE4AIILKqjbgfs9SOB+TP0HYQYWLrifYh+C+OGGEobIIGADZFgiYEydyKGKIV4oY4kSuugihg888KECA0BAF11fAfaABjnu2CNd/ikgJFND7sdjXiIqyRxgUlLZY5X8CUnljghAgKWOAujY4oIaIPhgTBwKkOGY/ZXJ4YMDCqAmiyC2aSacis0JIoJ2cmigYhr4JyCfcpr5p5yC8qbooow26uijkEYq6aSUVmrppZhmqummnHbq6aeghirqqKSWauqpqKaq6qqsturqq7DGKuustNZq66245rppCAA7></a>
+<hr>
+<a href=http://jnowak.students.wmid.amu.edu.pl/norvig.html>Polish<br>(Kuba Nowak)
+<br><img width=87 height=54 src="data:image/gif;base64,R0lGODlhVwA2AKIAAN5/k7+/v8eAjr5fc9twhs5AXf///74AJyH5BAAAAAAALAAAAABXADYAAAPUGLbc/jDKSSsMyurNu8ReKI5XRp6oBqZs+6xuzMJyPdJ2zuF6T/G+4MskLDqARiEy6Vsydc6nLSqVUauuK3ZG3EK73ik4bB2Ts+YzV53Tsj3u924AqNvv+Lx+z+/7/3oCB4OEhYaHiImKi4yNiQWOkZKTlIyQlZiZmoiXm56fkp2go6SGoqWooKeprJmrrbChsbOUr7S3h7a4uwe6vLe+v7PBwrDExazHyKjKy6TNzqrRu9DTm9XWrtm02Nu13rHd4JHi440F6Onq6+zt7u/w8fLvBAkAOw=="></a>
+<hr>
+<a href=http://pihisall.wordpress.com/2007/03/15/aprenda-a-programar-em-dez-anos/>Portuguese<br>(Augusto Radtke)
+<br><img width=74 height=54 src=data:image/gif;base64,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></a>
+<hr>
+<a href=http://norvig.com/romanian21-days.html>Romanian<br>(Ştefan Lazăr)
+<br><img width=80 height=54 src=data:image/gif;base64,R0lGODlhUAA2AMQAALrCO//+ACZJtPn7CM5IHvDVDbsAKWyDus5AXfn3R/v8RvTgStp2VsxAX8vRbFx3x//+QPf0Cb4AJztaowAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABQADYAAAX/4CGOZGmWjwMlbOu+MKssTIPceK7v+OT/wKAwKAAEIsikcslEDgoEg2RKrVqv1KF26ysem+DmM4otm7loojHMVo6l5ng1TZ942/i3fC+pp+94bHp8cX5ogIFgg4RlhlyIiUyLjFeOW5CRblBwlJWWQ5iZTpudWJ+ga6JLk6VTp0Khoqytr2pfqkmzpbVAsZm6nbw/vpHAlMJdqbijZK1zyMSJxozIdsrL04TV0YHZfNvXuN574LfYpM5Z0OGq43Lly7no6X3r5uLz6fDxEe6F9vz65XO2L56/MwD5HWyU0OBAWg3PNaNXUCInfRHxTcQojFueh7sytgMZTKQsksdMWv5CSU1lMZbaXEqD+U1mN5rkbH7cSFBnm4WmfArC+U5oGKCeOrI7yROi0nsjm4Z8GhCplYoaL/akqpDoP64OpZYEa5GeK6OKvCIkm9VsPbZRtTrl5fGn2jIhAAA7></a>
+<hr>
+<a href=http://www.williamspublishing.com/21-days.html>Russian<br>(Konstantin Ptitsyn)
+<br><img width=81 height=54 src="data:image/gif;base64,R0lGODlhUQA2AKIAAM5AXZ0WRmyDur+/v1xzqr4AJ////ztaoyH5BAAAAAAALAAAAABRADYAAAPFaLrc/jDKSdWoOOvdLv9gaHhiaUbkqarp6obtK2vxbE/1rTv57o+/YEdIBBaDveMrqVwxm6cntDQQWK/YrHbL7Xq/YCvhQC6bz+i0es1uu9/wuHxOr9vv+Lx+z+/7/4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl30BmpucnZ6foKGio6SbBaeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1te6ANrb3N3e3+Dh4uPk2wkAOw=="></a>
+<hr>
+<a href=http://www.inverudio.com/21-days.htm>Serbian<br>(Lazar Kovacevic)
+<br><img width=108 height=54 src="data:image/gif;base64,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"></a>
+<hr>
+<a href=http://loro.sf.net/notes/21-dias.html>Spanish <br>(Carlos Rueda)
+<br><img width=81 height=54 src="data:image/gif;base64,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"></a>
+<hr>
+<a href=http://www.efton.sk/sk/learn_programming_in_10_years.html>Slovak<br>
+(Jan Waclawek)
+<br><img width=81 height=54 src="data:image/gif;base64,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"></a>
+<hr>
+<a href="http://ileriseviye.org/arasayfa.php?inode=programmingtenyears.html">Turkish <br>(Çağıl Uluşahin)
+<br><img width=81 height=54 src=data:image/gif;base64,R0lGODlhUQA2AMQAAMIPNNZfePbf5N5/k/rv8eafru6/ycYfQtJPauqvu9pvhc4/XeKPoMovT/LP1moAFY4AHf///74AJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABRADYAAAX/ICSNZGmeaKqubDuKbizPdAnXeK7feu+zvJ9wKAkSjzkjcilTMp8rJ3RqklKv1us0q31yu8vvChBICCLoCCGhAIBPYhRgQEjb7QX3+5VbnO9oAgaDZwQBe0U4AYARAgMHJgcKAgV7cSSLgAN6KQoMb5cSC4AECy4NnFgzAH92DYgulwOACrCxM3V2BjmQVHEIgAg5A8JbMgV3Ajp0vQC9R3EGd5XDEQYKDgSvSHGafdJph2EywTUFuWnU4zGA4jQI52kCqUTddwPLdglM0Xf71W0CFDDFTQaDOwSW/YPyq10OBPTWxUAXKKItODNm3fl0MQqNVuFkPFM1owGjWi0CY7gjOSPTHQMjIyXg2CXUCJf+AjwDAC8CzZo5GoBklIZAMVA65lBklAeWzRMCQQpIEMAi0I4MsWbVyo9rV68FwUITO5bskKdmUaBNW4Xtj7VuRzyAQLeu3bt48+rdy7evX7ohAAA7>
+</a>
+<hr>
+<a href=http://oim.asu.kpi.ua/2013/03/18/piter-norvih-navchitsya-prohramuvaty-za-desyat-rokiv/>Ukranian<br>
+(Oleksii Molchanovskyi)
+<br><img width=81 height=54 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACFCAYAAAAenrcsAAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2wIHDQID8N2N/gAAAYlJREFUeJzt1jENw0AABEHbCobgSG0mARJcIWEaAZLKJmBt+1/MILhmpVv3z3EuwK1t9ACYmUAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBIJAIAgEgkAgCASCQCAIBMLj/fqO3gDTWv+/5zl6BMzKxYIgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBcAHAKQegzVMP0gAAAABJRU5ErkJggg==">
+</a>
+<hr>
+</table>
+<p>
+<hr>
+<a href=https://norvig.com/index.html><i>Peter Norvig</i> (Copyright 2001—2014)</a>
+<p><hr>
+<div id=disqus_thread></div><noscript><a href="http://norvig.disqus.com/?url=ref">View the forum thread.</a></noscript>
+</font></div>
