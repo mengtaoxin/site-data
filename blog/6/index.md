@@ -4,5 +4,6 @@ date: 2024-11-21
 lang: zh
 tags:
   - repost
-repost-url: https://www.scribd.com/document/261996062/Heroes-in-My-Heart
+customizeMetadata:
+  repostUrl: https://www.scribd.com/document/261996062/Heroes-in-My-Heart
 ---
